@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hola-mundo-job
+  namespace: adonis-paz-dev
+spec:
+  template:
+    spec:
+      containers:
+        - name: hola-mundo
+          image: busybox:latest
+          command: ["echo", "Hola Mundo"]
+      restartPolicy: Never
+  backoffLimit: 2 # Número de reintentos en caso de fallo
