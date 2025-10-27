@@ -1,14 +1,20 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: hola-mundo-job
+  name: hola-mundo-job-1
   namespace: nicolas-sierra-dev
 spec:
+  completitions: 10
+  parrellelism: 3
   template:
     spec:
       containers:
         - name: hola-mundo
           image: busybox:latest
-          command: ["echo", "Hola Mundo"]
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              sleep 60
+              echo 'Hola mundo con sleep 60 segundos'
       restartPolicy: Never
   backoffLimit: 2 # Número de reintentos en caso de fallo
