@@ -5,7 +5,7 @@ metadata:
   namespace: nicolas-sierra-dev
 spec:
   completitions: 10
-  parrellelism: 3
+  parallelism: 3
   template:
     spec:
       containers:
