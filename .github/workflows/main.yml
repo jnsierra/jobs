@@ -1,6 +1,6 @@
 name: CI-DockerBuild
 
-on: 
+on:
   push:
     branches: ["main"]
   workflow_dispatch:
@@ -26,5 +26,5 @@ jobs:
 
       - name: Deploy files
         run: |
-          oc project adonis-paz-dev
+          oc project nicolas-sierra-dev
           oc apply -f job.yaml
